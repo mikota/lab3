@@ -1,4 +1,4 @@
-package hr.fer.oop.fer3;
+package hr.fer.oop.lab3;
 import hr.fer.oop.lab3.welcomepack.*;
 
 public class Person {
@@ -11,14 +11,9 @@ public class Person {
 		this();
 		this.name = name;
 		this.country = country;
-		this.emotion = emotion;
-		if (emotion > 100) {
-			System.err.println("Emocija osobe ne moze biti veca od sto!");
-		} else if (emotion < 0) {
-			System.err.println("Emocija osobe ne moze biti manja od nula!");
-		}
+		setEmotion(emotion);
+
 	}
-	
 	public String getName() {
 		return name;
 	}
@@ -29,13 +24,15 @@ public class Person {
 		return emotion;
 	}
 	public void setEmotion(int emotion) {
-		this.emotion = emotion;
+		if (emotion > 100) {
+			System.err.println("Emocija osobe ne moze biti veca od sto!");
+		} else if (emotion < 0) {
+			System.err.println("Emocija osobe ne moze biti manja od nula!");
+		} else
+			this.emotion = emotion;
 	}
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
 		if (!(obj instanceof Person)) return false;
 		Person x = (Person) obj;
 		return (x.country == this.country && x.name == this.name);

@@ -25,14 +25,14 @@ public class ClubTeamTest {
 		FootballPlayer player = new FootballPlayer();
 		defaultTeam.registerPlayer(player);
 		if (!defaultTeam.isPlayerRegistered(player)) {
-			System.err.println("TEST FAILED: Igrac je trebao biti registriran!");
+			System.err.println("T1EST FAILED: Igrac je trebao biti registriran!");
 		}
 
 		FootballPlayer unskilledPlayer = new FootballPlayer("Slacker", Constants.DEFAULT_COUNTRY, 1, 1,
 				PlayingPosition.DF);
 		defaultTeam.registerPlayer(unskilledPlayer);
 		if (defaultTeam.isPlayerRegistered(unskilledPlayer)) {
-			System.err.println("TEST FAILED: Igrac ne bi smio biti registriran!!");
+			System.err.println("T2EST FAILED: Igrac ne bi smio biti registriran!!");
 		}
 
 		ClubTeam reputationTeam = new ClubTeam();
